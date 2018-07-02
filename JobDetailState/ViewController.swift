@@ -40,14 +40,13 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-			// TableViewCell()
-//			tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+//		cell.lbl.text = "Indexpath: \(indexPath.row)"
 		cell.dosomething(indexPath: indexPath, tbv: tableView)
         return cell
     }
 	
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		let cornerRadius: CGFloat = 5
+		let cornerRadius: CGFloat = 10
 		cell.backgroundColor = .clear
 		
 		let layer = CAShapeLayer()

@@ -38,7 +38,10 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-38" y="14"/>
+            <connections>
+                <outlet property="lbl" destination="aHb-wD-5pn" id="4bS-NX-QZJ"/>
+            </connections>
+            <point key="canvasLocation" x="66" y="-224"/>
         </tableViewCell>
     </objects>
 </document>
