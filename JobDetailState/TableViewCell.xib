@@ -19,38 +19,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="354" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJ1-s7-1Fl">
-                        <rect key="frame" x="15" y="0.0" width="324" height="59.5"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHb-wD-5pn">
-                                <rect key="frame" x="5" y="5" width="314" height="49.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHb-wD-5pn">
+                        <rect key="frame" x="5" y="19" width="344" height="20.5"/>
                         <constraints>
-                            <constraint firstItem="aHb-wD-5pn" firstAttribute="leading" secondItem="QJ1-s7-1Fl" secondAttribute="leading" constant="5" id="791-eN-cYb"/>
-                            <constraint firstItem="aHb-wD-5pn" firstAttribute="top" secondItem="QJ1-s7-1Fl" secondAttribute="top" constant="5" id="FyZ-ee-ypT"/>
-                            <constraint firstAttribute="trailing" secondItem="aHb-wD-5pn" secondAttribute="trailing" constant="5" id="QUy-kx-3It"/>
-                            <constraint firstAttribute="height" constant="59.5" id="XE9-lv-Yc0"/>
-                            <constraint firstAttribute="bottom" secondItem="aHb-wD-5pn" secondAttribute="bottom" constant="5" id="tR9-cw-4fh"/>
+                            <constraint firstAttribute="height" constant="20.5" id="bm2-EO-pW8"/>
                         </constraints>
-                    </view>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="QJ1-s7-1Fl" secondAttribute="trailing" constant="15" id="1uC-jq-P5B"/>
-                    <constraint firstItem="QJ1-s7-1Fl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WgT-FF-qUg"/>
-                    <constraint firstAttribute="bottom" secondItem="QJ1-s7-1Fl" secondAttribute="bottom" id="jZQ-ot-0j2"/>
-                    <constraint firstItem="QJ1-s7-1Fl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="uco-DO-73z"/>
+                    <constraint firstItem="aHb-wD-5pn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="AZh-iS-xrX"/>
+                    <constraint firstItem="aHb-wD-5pn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="EYL-0f-DXz"/>
+                    <constraint firstAttribute="trailing" secondItem="aHb-wD-5pn" secondAttribute="trailing" constant="5" id="Pdk-12-bKl"/>
+                    <constraint firstAttribute="bottom" secondItem="aHb-wD-5pn" secondAttribute="bottom" constant="20" id="lvd-7k-oRO"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="containerView" destination="QJ1-s7-1Fl" id="gge-hb-Inl"/>
-            </connections>
             <point key="canvasLocation" x="-38" y="14"/>
         </tableViewCell>
     </objects>
