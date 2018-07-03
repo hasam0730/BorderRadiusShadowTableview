@@ -54,19 +54,14 @@ extension ViewController: UITableViewDataSource {
 		let layer = CAShapeLayer()
 		let pathRef = CGMutablePath()
 		let bounds = cell.bounds.insetBy(dx: 0, dy: 0)
-//        cornerLayerWidth = bounds.width
-//        var addLine = false
-		
+        
 		layer.strokeColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1.0).cgColor
-		
-//		if indexPath.row == 0 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-//			pathRef.__addRoundedRect(transform: nil, rect: bounds, cornerWidth: cornerRadius, cornerHeight: cornerRadius)
-//		}
-//		else
+        layer.lineWidth = 1.0
+        
 		if indexPath.row == 0 {
 			pathRef.move(to: .init(x: bounds.minX, y: bounds.maxY))
-			pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.minY), tangent2End: .init(x: bounds.midX, y: bounds.minY), radius: cornerRadius)
-			pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.minY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
+			pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.minY), tangent2End: .init(x: bounds.midX, y: bounds.minY), radius: cornerRadius-2)
+			pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.minY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius-2)
 			pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.maxY))
 			
 		}
@@ -76,22 +71,11 @@ extension ViewController: UITableViewDataSource {
 			pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.maxY), tangent2End: .init(x: bounds.midX, y: bounds.maxY), radius: cornerRadius)
 			pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.maxY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
 			pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.minY))
-		} else {
-//			pathRef.addRect(bounds)
-//			addLine = true
 		}
 		
 		layer.path = pathRef
 		layer.fillColor = UIColor(white: 1, alpha: 1).cgColor
-		
-//        if (addLine == true) {
-//            let lineLayer = CALayer()
-//            let lineHeight = 1.0 / UIScreen.main.scale
-//            lineLayer.frame = CGRect(x: bounds.minX, y: bounds.size.height - lineHeight, width: bounds.size.width , height: lineHeight)
-//            lineLayer.backgroundColor = tableView.separatorColor?.cgColor
-//            layer.addSublayer(lineLayer)
-//        }
-		
+
 		let testView = UIView(frame: bounds)
 		testView.layer.insertSublayer(layer, at: 0)
 		testView.backgroundColor = .clear

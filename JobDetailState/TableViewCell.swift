@@ -22,15 +22,14 @@ class TableViewCell: UITableViewCell {
     }
 
 	func layoutBottomLie() {
-		bottomView.frame = CGRect(x: bounds.minX, y: bounds.maxY-2, width: bounds.width+10, height: 2)
+		bottomView.frame = CGRect(x: bounds.minX, y: bounds.maxY-2, width: bounds.width+10, height: 2.2)
         bottomView.layer.cornerRadius = cornerRadius
         bottomView.layer.masksToBounds = true
         contentView.addSubview(bottomView)
 	}
 	
     override func draw(_ rect: CGRect) {
-		print(rect)
-//		contentView.addLineBorder(side: .Left, color: gray, width: 1.2)
+        contentView.addLineBorder(side: .Left, color: gray, width: 1.2)
 		contentView.addLineBorder(side: .Right, color: gray, width: 1.2)
     }
 	
@@ -42,7 +41,7 @@ class TableViewCell: UITableViewCell {
 			contentView.layer.cornerRadius = cornerRadius
 			contentView.layer.masksToBounds = true
 		} else if indexPath.row == 0 {
-			contentView.layer.cornerRadius = cornerRadius
+            contentView.layer.cornerRadius = cornerRadius
 			contentView.layer.masksToBounds = true
 		} else {
 			contentView.addLineBorder(side: .Bottom, color: .white, width: 1.2)
@@ -56,7 +55,7 @@ class TableViewCell: UITableViewCell {
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		
-//        bottomView.removeFromSuperview()
+        bottomView.removeFromSuperview()
         bottomView.layer.masksToBounds = true
 		
         contentView.addLineBorder(side: .Bottom, color: .white, width: 1.2)
