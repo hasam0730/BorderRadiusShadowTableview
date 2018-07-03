@@ -18,22 +18,19 @@ class TableViewCell: UITableViewCell {
         // Initialization code
         
 		bottomView.backgroundColor = gray
-		
-		layoutBottomLie()
-		
     }
 
 	func layoutBottomLie() {
 		bottomView.frame = CGRect(x: bounds.minX, y: bounds.maxY-2, width: bounds.width, height: 2)
-		bottomView.layer.cornerRadius = 0.2
+		bottomView.layer.cornerRadius = 0.0
 		bottomView.layer.masksToBounds = true
+        contentView.addSubview(bottomView)
 	}
 	
     override func draw(_ rect: CGRect) {
 		print(rect)
 //		contentView.addLineBorder(side: .Left, color: gray, width: 1.2)
 		contentView.addLineBorder(side: .Right, color: gray, width: 1.2)
-		layoutBottomLie()
     }
 	
 	func dosomething(indexPath: IndexPath, tbv: UITableView) {
@@ -41,8 +38,6 @@ class TableViewCell: UITableViewCell {
 			lbl.text = "qiuweiqueiqwueiu"
 			layoutBottomLie()
 			
-			contentView.addSubview(bottomView)
-			layoutBottomLie()
 			contentView.layer.cornerRadius = 10.0
 			contentView.layer.masksToBounds = true
 		} else if indexPath.row == 0 {
@@ -50,24 +45,24 @@ class TableViewCell: UITableViewCell {
 			contentView.layer.masksToBounds = true
 		} else {
 			contentView.addLineBorder(side: .Bottom, color: .white, width: 1.2)
+            contentView.layer.masksToBounds = false
 		}
 		contentView.addLineBorder(side: .Left, color: gray, width: 1.2)
 		contentView.addLineBorder(side: .Right, color: gray, width: 1.2)
 		contentView.backgroundColor = .white
-		layoutBottomLie()
 	}
 	
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		
-		layoutBottomLie()
-		contentView.layer.masksToBounds = false
+        bottomView.removeFromSuperview()
+        bottomView.layer.masksToBounds = true
 		
-		contentView.addLineBorder(side: .Bottom, color: .white, width: 1.2)
+        contentView.addLineBorder(side: .Bottom, color: .white, width: 1.2)
 	}
 	
     override func layoutSubviews() {
-		
+		contentView.layer.masksToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

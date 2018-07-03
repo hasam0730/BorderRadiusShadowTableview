@@ -82,13 +82,13 @@ extension ViewController: UITableViewDataSource {
 		layer.path = pathRef
 		layer.fillColor = UIColor(white: 1, alpha: 1).cgColor
 		
-		if (addLine == true) {
-			let lineLayer = CALayer()
-			let lineHeight = 1.0 / UIScreen.main.scale
-			lineLayer.frame = CGRect(x: bounds.minX, y: bounds.size.height - lineHeight, width: bounds.size.width , height: lineHeight)
-			lineLayer.backgroundColor = tableView.separatorColor?.cgColor
-			layer.addSublayer(lineLayer)
-		}
+//        if (addLine == true) {
+//            let lineLayer = CALayer()
+//            let lineHeight = 1.0 / UIScreen.main.scale
+//            lineLayer.frame = CGRect(x: bounds.minX, y: bounds.size.height - lineHeight, width: bounds.size.width , height: lineHeight)
+//            lineLayer.backgroundColor = tableView.separatorColor?.cgColor
+//            layer.addSublayer(lineLayer)
+//        }
 		
 		let testView = UIView(frame: bounds)
 		testView.layer.insertSublayer(layer, at: 0)
