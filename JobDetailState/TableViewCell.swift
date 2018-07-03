@@ -12,6 +12,7 @@ class TableViewCell: UITableViewCell {
 
 	@IBOutlet weak var lbl: UILabel!
 	let bottomView = UIView()
+    let cornerRadius: CGFloat = 6.0
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,9 +22,9 @@ class TableViewCell: UITableViewCell {
     }
 
 	func layoutBottomLie() {
-		bottomView.frame = CGRect(x: bounds.minX, y: bounds.maxY-2, width: bounds.width, height: 2)
-		bottomView.layer.cornerRadius = 0.0
-		bottomView.layer.masksToBounds = true
+		bottomView.frame = CGRect(x: bounds.minX, y: bounds.maxY-2, width: bounds.width+10, height: 2)
+        bottomView.layer.cornerRadius = cornerRadius
+        bottomView.layer.masksToBounds = true
         contentView.addSubview(bottomView)
 	}
 	
@@ -38,10 +39,10 @@ class TableViewCell: UITableViewCell {
 			lbl.text = "qiuweiqueiqwueiu"
 			layoutBottomLie()
 			
-			contentView.layer.cornerRadius = 10.0
+			contentView.layer.cornerRadius = cornerRadius
 			contentView.layer.masksToBounds = true
 		} else if indexPath.row == 0 {
-			contentView.layer.cornerRadius = 10.0
+			contentView.layer.cornerRadius = cornerRadius
 			contentView.layer.masksToBounds = true
 		} else {
 			contentView.addLineBorder(side: .Bottom, color: .white, width: 1.2)
@@ -55,7 +56,7 @@ class TableViewCell: UITableViewCell {
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		
-        bottomView.removeFromSuperview()
+//        bottomView.removeFromSuperview()
         bottomView.layer.masksToBounds = true
 		
         contentView.addLineBorder(side: .Bottom, color: .white, width: 1.2)

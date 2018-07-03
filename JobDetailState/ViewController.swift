@@ -11,6 +11,8 @@ let gray = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 1.0)
 class ViewController: UIViewController {
 	
     @IBOutlet weak var tableView: UITableView!
+    let cornerRadius: CGFloat = 6.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,7 +28,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	var cornerLayerWidth:CGFloat = 0.0
+//    var cornerLayerWidth:CGFloat = 0.0
 }
 
 extension ViewController: UITableViewDataSource {
@@ -46,14 +48,14 @@ extension ViewController: UITableViewDataSource {
     }
 	
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		let cornerRadius: CGFloat = 10
+		
 		cell.backgroundColor = .clear
 		
 		let layer = CAShapeLayer()
 		let pathRef = CGMutablePath()
 		let bounds = cell.bounds.insetBy(dx: 0, dy: 0)
-		cornerLayerWidth = bounds.width
-		var addLine = false
+//        cornerLayerWidth = bounds.width
+//        var addLine = false
 		
 		layer.strokeColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1.0).cgColor
 		
