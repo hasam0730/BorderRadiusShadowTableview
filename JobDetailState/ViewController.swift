@@ -56,12 +56,12 @@ extension ViewController: UITableViewDataSource {
 		let bounds = cell.bounds.insetBy(dx: 0, dy: 0)
         
 		layer.strokeColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1.0).cgColor
-        layer.lineWidth = 1.0
+        layer.lineWidth = 1.2
         
 		if indexPath.row == 0 {
 			pathRef.move(to: .init(x: bounds.minX, y: bounds.maxY))
-			pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.minY), tangent2End: .init(x: bounds.midX, y: bounds.minY), radius: cornerRadius-2)
-			pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.minY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius-2)
+			pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.minY), tangent2End: .init(x: bounds.midX, y: bounds.minY), radius: cornerRadius)
+			pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.minY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
 			pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.maxY))
 			
 		}
